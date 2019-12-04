@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线爬虫</title>
+    <style>
+        body {
+            background: #E3E6C3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        a.guide:link, a.guide:visited {
+            display: block;
+            width: 480px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #bebebe;
+            text-align: center;
+            padding: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        a.guide:hover, a.guide:active {
+            background-color: #cc0000;
+        }
+
+        div.page {
+            margin: 0 auto;
+            width: 40%
+        }
+
+        div.msg {
+            height: 120px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #team_table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #team_table td, #team_table th {
+            font-size: 1em;
+            text-align: center;
+            border: 1px solid #75878a;
+            padding: 3px 7px 2px 7px;
+        }
+
+        #team_table th {
+            font-size: 1.1em;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: #88ada6;
+            color: #ffffff;
+        }
+
+        #team_table tr:nth-child(2n+1) {
+            color: #000000;
+            background-color: #e9f1f6;
+        }
+
+        #team_table tr:nth-child(2n) {
+            color: #000000;
+            background-color: #bacac6;
+        }
+
+        .spidebtn { /* 按钮美化 */
+            width: 100%; /* 宽度 */
+            height: 40px; /* 高度 */
+            border-width: 0; /* 边框宽度 */
+            border-radius: 0; /* 边框半径 */
+            background: #d6ecf0; /* 背景颜色 */
+            cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+            outline: none; /* 不显示轮廓线 */
+            font-size: 17px; /* 字体大小 */
+            font-family: "Adobe 楷体 Std R", serif;
+            font-weight: bold;
+        }
+
+        .spidebtn:hover { /* 鼠标移入按钮范围时改变颜色 */
+            background: #e3f9fd;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="/" class="guide">新闻搜索</a></li>
+    <li><a href="/team" class="guide">球队热度</a></li>
+    <li><a href="/spide" class="guide">在线爬虫</a></li>
+</ul>
+{% csrf_token %}
+<div class="page">
+    <h1>在线爬虫</h1>
+    <form
+            {% if isRunning %}
+                action="/spide"
+            {% else %}
+                action="/spiding"
+            {% endif %}
+                method="post" class="spide">
+        <input type="submit" class="spidebtn"
+                {% if isRunning %}
+               value="暂停爬虫/查看结果"
+                {% else %}
+               value="开始爬虫"
+                {% endif %}><br><br>
+    </form>
+    {% csrf_token %}
+    <table id="team_table">
+        <th width=60%>操作项目</th>
+        <th width=40%>当前状态</th>
+        <tr>
+            <td>已爬取新闻数量<br>（更新新闻详情页）</td>
+            <td>{{ info.0 }}</td>
+        </tr>
+        <tr>
+            <td>最新新闻时间</td>
+            <td>{{ info.1 }}</td>
+        </tr>
+        <tr>
+            <td>已分词新闻数量<br>（更新搜索结果）</td>
+            <td>{{ info.2 }}</td>
+        </tr>
+        <tr>
+            <td>已更新热度的新闻数量<br>（更新球队热度榜）</td>
+            <td>{{ info.3 }}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

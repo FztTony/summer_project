@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>球队热度榜</title>
+    <style>
+        body {
+            background: #E3E6C3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        a.guide:link, a.guide:visited {
+            display: block;
+            width: 480px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #bebebe;
+            text-align: center;
+            padding: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        a.guide:hover, a.guide:active {
+            background-color: #cc0000;
+        }
+
+        div {
+            margin: 0px auto;
+            width: 40%
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #team_table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #team_table td, #team_table th {
+            font-size: 1em;
+            text-align: center;
+            border: 1px solid #75878a;
+            padding: 3px 7px 2px 7px;
+        }
+
+        #team_table th {
+            font-size: 1.1em;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: #88ada6;
+            color: #ffffff;
+        }
+
+        #team_table tr:nth-child(2n+1) {
+            color: #000000;
+            background-color: #e9f1f6;
+        }
+
+        #team_table tr:nth-child(2n) {
+            color: #000000;
+            background-color: #bacac6;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="/" class="guide">新闻搜索</a></li>
+    <li><a href="/team" class="guide">球队热度</a></li>
+    <li><a href="/spide" class="guide">在线爬虫</a></li>
+</ul>
+<div>
+    <h1>球队热度榜</h1>
+    <table id="team_table">
+        <th width=10%></th>
+        <th width=50%>队名</th>
+        <th width=40%>相关新闻数量</th>
+        {% for team in table %}
+            <tr>
+                <td>{{ team.0 }}</td>
+                <td><a href="/team/{{ team.1 }}">{{ team.1 }}</a></td>
+                <td>{{ team.2 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

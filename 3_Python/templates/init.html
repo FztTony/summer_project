@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <style>
+        body{
+            background: #E3E6C3;
+        }
+        .searchinput { /* 按钮美化 */
+            width: 400px; /* 宽度 */
+            height: 32px; /* 高度 */
+            border-radius: 0px; /* 边框半径 */
+            font-size: 17px; /* 字体大小 */
+        }
+        .searchbtn { /* 按钮美化 */
+            width: 200px; /* 宽度 */
+            height: 40px; /* 高度 */
+            border-width: 0px; /* 边框宽度 */
+            border-radius: 0px; /* 边框半径 */
+            background: #0eb83a; /* 背景颜色 */
+            cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+            outline: none; /* 不显示轮廓线 */
+            color: white; /* 字体颜色 */
+            font-size: 17px; /* 字体大小 */
+        }
+        .searchbtn:hover { /* 鼠标移入按钮范围时改变颜色 */
+            background: #00cc22;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+        }
+        li {
+            float: left;
+        }
+        a.guide:link, a.guide:visited {
+            display: block;
+            width: 480px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #bebebe;
+            text-align: center;
+            padding: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        a.guide:hover,a.guide:active
+        {
+        background-color:#cc0000;
+        }
+        .search{
+            margin: 50px auto 50px;
+            text-align: center;
+        }
+        em{
+            font-style: normal;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="/" class = "guide">新闻搜索</a></li>
+        <li><a href="/team" class = "guide">球队热度</a></li>
+        <li><a href="/spide" class = "guide">在线爬虫</a></li>
+    </ul>
+    <form action="/search" method="post" class="search">
+        <input type="text" class = "searchinput" name="search_for">
+        <input type="submit" class = "searchbtn" value="搜索"><br><br>
+    </form>
+</body>
+</html>

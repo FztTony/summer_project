@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+    <style>
+        body {
+            background: #E3E6C3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        a.guide:link, a.guide:visited {
+            display: block;
+            width: 480px;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #bebebe;
+            text-align: center;
+            padding: 4px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        a.guide:hover, a.guide:active {
+            background-color: #cc0000;
+        }
+
+        #team_table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #team_table td, #team_table th {
+            font-size: 1em;
+            text-align: center;
+            border: 1px solid #75878a;
+            padding: 3px 7px 2px 7px;
+        }
+
+        #team_table th {
+            font-size: 1.1em;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: #88ada6;
+            color: #ffffff;
+        }
+
+        #team_table tr:nth-child(2n+1) {
+            color: #000000;
+            background-color: #e9f1f6;
+        }
+
+        #team_table tr:nth-child(2n) {
+            color: #000000;
+            background-color: #bacac6;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .search_box {
+            margin: 20px auto;
+            width: 600px
+        }
+
+        em {
+            font-style: normal;
+            color: #c00;
+        }
+
+        .search_title {
+            font-weight: 400;
+            font-size: 16px;
+            margin-top: 0px;
+            margin-bottom: 1px;
+        }
+
+        .search_date {
+            color: #666;
+        }
+
+        .search_content {
+            font-size: 13px;
+        }
+
+        .prev {
+            float: left;
+            margin-left: 400px;
+            margin-bottom: 50px;
+        }
+
+        .next {
+            float: right;
+            margin-right: 400px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="/" class="guide">新闻搜索</a></li>
+    <li><a href="/team" class="guide">球队热度</a></li>
+    <li><a href="/spide" class="guide">在线爬虫</a></li>
+</ul>
+<h1>{{ fullname }}</h1>
+<h2>球队信息</h2>
+<table id="team_table">
+    {% for head in header %}
+        <th>{{ head }}</th>
+    {% endfor %}
+    {% for person in table %}
+        <tr>
+            {% for info in person %}
+                <td>{{ info }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+<div class="search_box"><h2>相关新闻</h2></div>
+
+{% for one in res %}
+    <div class="search_box">
+        <h3 class="search_title">
+            <a href="/detail/{{ one.id }}">{{ one.title | safe }}</a>
+        </h3>
+        <div class="search_content">
+            <span class="search_date">来源：{{ one.source }}时间：{{ one.time }}</span>{{ one.abs | safe }}
+        </div>
+    </div>
+{% endfor %}
+{% if prev > 0 %}
+    <a href="/team/{{ name }}/{{ prev }}" class="prev"> 上一页 </a>
+{% endif %}
+{% if hasnext %}
+    <a href="/team/{{ name }}/{{ next }}" class="next"> 下一页 </a>
+{% endif %}
+</body>
+</html>

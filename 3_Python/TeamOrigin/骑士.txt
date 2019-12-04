@@ -1,0 +1,54 @@
+克利夫兰骑士队
+号码	球员姓名	位置	身高	体重	年龄	生涯	毕业大学
+13	特里斯坦-汤普森
+	中锋	2.08m	107kg	28	0年	Texas
+9	钱宁-弗莱
+	大前锋	2.13m	115kg	36	0年	Arizona
+5	JR-史密斯
+	得分后卫	1.98m	102kg	33	0年	
+0	凯文-乐福
+	大前锋	2.08m	113kg	31	0年	UCLA
+26	凯尔-科沃尔
+	得分后卫	2.01m	96kg	38	0年	Creighton
+16	切迪-奥斯曼
+	小前锋	2.03m	97kg	24	0年	
+41	安特-日日奇
+	中锋	2.11m	115kg	22	0年	
+10	约翰-霍兰
+	得分后卫	1.96m	92kg	30	0年	Boston U.
+3	帕特里克-麦考
+	得分后卫	2.01m	83kg	23	0年	Nevada-Las Vegas
+1	尼克-斯陶斯卡斯
+	得分后卫	1.98m	92kg	25	0年	Michigan
+6	韦德-鲍德温
+	得分后卫	1.93m	90kg	23	0年	Vanderbilt
+55	安德鲁-哈里森
+	控球后卫	1.98m	96kg	24	0年	Kentucky
+3	科比-西蒙斯
+	控球后卫	1.93m	77kg	22	0年	Arizona
+31	约翰-亨森
+	中锋	2.11m	99kg	28	0年	North Carolina
+18	马修-德拉维多瓦
+	控球后卫	1.93m	90kg	28	0年	Saint Mary's (CA)
+3	马基斯-克里斯
+	大前锋	2.08m	108kg	22	0年	Washington
+20	布兰登-奈特
+	控球后卫	1.90m	88kg	27	0年	Kentucky
+8	乔丹-克拉克森
+	得分后卫	1.96m	87kg	27	0年	Missouri
+22	小拉里-南斯
+	小前锋	2.06m	104kg	26	0年	Wyoming
+15	萨姆-德克尔
+	小前锋	2.06m	104kg	25	0年	Wisconsin
+3	卡梅伦-佩恩
+	控球后卫	1.90m	86kg	25	0年	Murray State
+12	大卫-努瓦巴
+	得分后卫	1.93m	99kg	26	0年	Cal Poly - San Luis Obispo
+3	乔治-希尔
+	控球后卫	1.90m	85kg	33	0年	Indiana Purdue-Indianapolis
+10	亚历克-伯克斯
+	得分后卫	1.98m	97kg	28	0年	Colorado
+1	罗德尼-胡德
+	得分后卫	2.03m	93kg	26	0年	Duke
+4	以赛亚-泰勒
+	控球后卫	1.90m	77kg	25	1年	Texas
